@@ -171,11 +171,12 @@ class User {
 
   getPassword(user) {
     console.log(`Admin level = ${this.adminLevel}`);
-    if (this.adminLevel > 0) {
+    if (this instanceof AdminUser && this.adminLevel > 0) {
       console.log(`User password = ${user.#password}`);
       return user.#password;
     } else {
       console.log("You don't have permission.");
+      return null;
     }
   }
 }
@@ -184,7 +185,7 @@ class AdminUser extends User {
   constructor(email, password, adminLevel) {
     super(email, password);
     this.adminLevel = adminLevel;
-  }  
+  }
 }
 
 const user = new User("example@email.com", "securePass123");
@@ -201,3 +202,6 @@ admin.password = "12345";
 admin.password = "newAdminPass";
 console.log(admin.getPassword(user));
 console.log(admin.getPassword(admin));
+
+console.log(user.getPasswordAsAdmin(user));
+console.log(admin.getPasswordAsAdmin(admin));
