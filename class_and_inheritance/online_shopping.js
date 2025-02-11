@@ -1,27 +1,27 @@
-// 1. Create a class Product
-// Private Properties:
-// #name (string) → Product name
-// #price (number) → Product price (must be greater than 0)
-// Methods:
-// Getter get name(): Returns the product name.
-// Setter set name(newName): Updates the name (only if it's a non-empty string).
-// Getter get price(): Returns the price.
-// Setter set price(newPrice): Updates the price(only if it's greater than 0).
+/* 1. Create a class Product
+Private Properties:
+#name (string) → Product name
+#price (number) → Product price (must be greater than 0)
+Methods:
+Getter get name(): Returns the product name.
+Setter set name(newName): Updates the name (only if it's a non-empty string).
+Getter get price(): Returns the price.
+Setter set price(newPrice): Updates the price(only if it's greater than 0).
 
-// 2. Create a class ShoppingCart
-// Private Properties:
-// #items (array) → Stores added products (Product objects).
-// Methods:
-// addProduct(product): Adds a Product to #items.
-// removeProduct(productName): Removes a product by name (if it exists).
-// get totalPrice(): Returns the total cost of all products in the cart.
-// listProducts(): Prints all products in the cart.
-// checkout(): Clears the cart and prints "Purchase complete! Total: $XX".
+2. Create a class ShoppingCart
+Private Properties:
+#items (array) → Stores added products (Product objects).
+Methods:
+addProduct(product): Adds a Product to #items.
+removeProduct(productName): Removes a product by name (if it exists).
+get totalPrice(): Returns the total cost of all products in the cart.
+listProducts(): Prints all products in the cart.
+checkout(): Clears the cart and prints "Purchase complete! Total: $XX".
 
-//     3. Bonus Challenge 🏆
-// Add a method applyDiscount(code) in ShoppingCart.
-// If code === "DISCOUNT10", apply a 10% discount to totalPrice.
-// Add a quantity property in Product and modify ShoppingCart to track quantities.
+ 3. Bonus Challenge 🏆
+Add a method applyDiscount(code) in ShoppingCart.
+If code === "DISCOUNT10", apply a 10% discount to totalPrice.
+Add a quantity property in Product and modify ShoppingCart to track quantities.*/
 
 class Product {
   #name;
@@ -119,11 +119,11 @@ const product2 = new Product("Mouse", 40);
 const cart = new ShoppingCart();
 cart.addProduct(product1);
 cart.addProduct(product2);
-cart.listProducts(); 
+cart.listProducts();
 console.log(cart.totalPrice); // Expected: 1240
 
 cart.applyDiscount("DISCOUNT10");
 console.log(cart.totalPrice); // Expected: 1116
 
-cart.checkout(); 
+cart.checkout();
 cart.listProducts(); // Expected: Cart is empty!
