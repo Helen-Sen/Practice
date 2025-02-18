@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_5-1</title>
+  </head>
+  <body>
+    <!--/*В этом упражнении мы создадим игру «Угадай число», которая принимает пользовательский ввод и отвечает, насколько точным было предположение.
+1. Объявите переменную, которая будет использоваться в качестве максимального значения для игры.
+2.Сгенерируйте случайное число (которое будет угадываемым), используя Math.random() и Math.floor(). 
+Вам также нужно будет добавить 1, чтобы значение возвращалось как 1 – [любое установленное максимальное значение]. 
+Можете при создании игры периодически выводить это значение в консоли, а затем, когда написание игры будет завершено, закомментировать его.
+3.Создайте переменную, которая будет отслеживать соответствие пользовательского ввода угадываемому числу, и присвойте ей логическое значение 
+по умолчанию false. Если пользователь угадает число, переменная должна вернуть значение true.
+4.Используйте цикл while, чтобы создать повторяющийся запрос, который будет предлагать пользователю ввести в строке число от 1 до 5, 
+и преобразуйте полученные данные, чтобы они соответствовали типу случайных чисел.
+5.Внутри цикла while с помощью условия проверьте, равно ли значение запроса угадываемому значению. 
+Постройте логику таким образом, чтобы, когда число верно, устанавливался статус true и цикл завершался командой break. 
+Предоставьте игроку обратную связь относительно того, было ли предположение близким к истине, и пригласите ввести новое значение. 
+Делайте так до тех пор, пока пользователь не угадает число. Таким образом, мы используем цикл, чтобы продолжать задавать вопросы,
+ пока решение не будет верным. В этот момент можно остановить итерацию.*/-->
+    <script>
+      let maxNumber = 5;
+      let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+      console.log(randomNumber);
+      let result = false;
+
+      while (!result) {
+        let userNumber = +prompt(`Enter an integer from 1 to ${maxNumber}`);
+
+        if (isNaN(userNumber) || userNumber > maxNumber || userNumber <= 0) {
+          alert(`Please, enter a valid integer from 1 to ${maxNumber}`);
+        } else if (userNumber === randomNumber) {
+          alert(`Your number is ${userNumber}, random number is ${randomNumber}. You guessed it!`);
+          result = true;
+        } else if (userNumber < randomNumber) {
+          alert("Your number less than random number, try again");
+        } else {
+          alert("Your number greater than random number, try again");
+        }
+        //   } else {
+        //     alert(`Your number is ${userNumber < randomNumber ? "less" : "greater"} than the random number, try again.`);
+        //   }
+      }
+    </script>
+  </body>
+</html>

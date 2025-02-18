@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project_2</title>
+  </head>
+  <body>
+    <!--Попросите пользователя ввести имя, используя оператор switch, чтобы в результате вернуть подтверждение того, 
+    что пользователь является другом, если выбранное имя прописано в одном из операторов case. 
+    Можно добавить ответ по умолчанию о том, что вы не знаете этого человека, если имя не содержится в коде программы. 
+    Выведите результаты на экран.-->
+    <script>
+      let userName = prompt("Enter your name, please");
+      switch (userName) {
+        case "Natalia":
+        case "Ilya":
+        case "Svitlana":
+          alert("Your are my friend!!!");
+          break;
+        default:
+          alert("Your are NOT my friend!!!");
+          break;
+      }
+    </script>
+  </body>
+</html>
