@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1.Сформируйте массив описаний.
+2.Создайте функцию, запрашивающую имя у пользователя.
+3.Выберите случайное значение из массива, используя Math.random.
+4.Выведите на экран значение из запроса и значение, выбранное в массиве.
+5.Вызовите функцию.-->
+    <script>
+      let array = ["Super", "Beautiful", "Smart"];
+      function getName() {
+        let yourName = prompt("What is your name?");
+        let option = array[Math.floor(Math.random() * array.length)];
+        alert(`${yourName} is ${option}!`);
+      }
+
+      getName();
+    </script>
+  </body>
+</html>
